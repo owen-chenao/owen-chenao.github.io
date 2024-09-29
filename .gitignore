@@ -1,0 +1,184 @@
+.classpath
+.project
+target/
+.settings/
+*.iml
+node_modules/
+/logs 
+*.css.map
+*.scss
+
+### macOS ###
+.DS_Store
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+*.lck
+
+*.ipr
+*.iws
+
+/transaction-logs/
+**/transaction-logs/
+
+# BlueJ files
+*.ctxt
+
+.project
+**/.project
+
+.classpath
+**/.classpath
+
+.settings
+**/.settings
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+
+target/
+/target/
+**/target/
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Exclude file or directory not commit git server
+
+node_modules/
+**/node_modules/
+
+.gradle
+**/.gradle/
+
+**/build
+build/
+
+*.iml
+**/*.iml
+
+gradle-wrapper.jar
+.gradletasknamecache
+ 
+package-lock.json
+**/package-lock.json
+
+## JRebel 热部署排除配置文件
+**/rebel.xml
+**/rebel-remote.xml
+**/.rebel.xml.bak
+**/.rebel-remote.xml.bak
+
+**/~/.grunt-init/
+
+# gradle项目排除设置
+**/.gradle
+/build/
+
+# Ignore Gradle GUI enums
+gradle-app.setting
+
+
+**/.factorypath
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/ 
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gradle
+
+# 排除git插件maven-git-commit-id-plugin的生成信息
+# git.properties
+
+#******************************************************************* jenkins begin
+target
+work
+
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+
+**/.idea/*
+**/.idea/*.xml
+
+#!/.idea/.name
+#!/.idea/encodings.xml
+#!**/.idea/.name
+#!**/.idea/encodings.xml
+
+!/.idea/icon.svg
+!**/.idea/icon.svg
+
+out
+
+# Eclipse and VSCode project files
+.settings
+.classpath
+.project
+.factorypath
+build
+
+# VSCode workspace file
+*.code-workspace
+
+# vim
+*~
+*.swp
+
+# ctags
+tags
+
+# OS X
+.DS_Store
+
+# mvn versions:set
+pom.xml.versionsBackup
+
+war/images/16x16
+war/images/24x24
+war/images/32x32
+war/images/48x48
+jenkins.war
+RPMS
+SRPMS
+debian/binary
+debian/debian/jenkins
+debian/debian/jenkins.substvars
+debian/debian/files
+debian/build-stamp
+debian/configure-stamp
+*.debhelper
+*.debhelper.log
+jenkins_*.build
+jenkins_*.changes
+*.deb
+*.pkg
+*.zip
+push-build.sh
+war/node_modules/
+war/yarn-error.log
+.java-version
+.checkstyle
+#******************************************************************* jenkins end
