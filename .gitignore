@@ -58,6 +58,9 @@ hs_err_pid*
 node_modules/
 **/node_modules/
 
+.deploy_git/
+**/.deploy_git/
+
 .gradle
 **/.gradle/
 
