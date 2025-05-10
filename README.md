@@ -12,6 +12,12 @@ npm install
 hexo server
 ```
 
+## Hexo 发布新文章
+
+```
+hexo new 
+```
+
 ## 博客操作发布流程
 
 ```
