@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>251011-Ubuntu升级SSH-Ubuntu20/22/24通过deb软件包方式升级openssh到9.9的方法 | (ALL-AI)Think. Code. Repeat.</title>
+  <meta name="keywords" content=" Linux , 安装 , Ubuntu , SSH ">
+  <meta name="description" content="251011-Ubuntu升级SSH-Ubuntu20/22/24通过deb软件包方式升级openssh到9.9的方法 | (ALL-AI)Think. Code. Repeat.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="导出LZ4压缩文件12345678910111213mysqlpump.exe --no-defaults -h 127.0.0.1 -P 3306 -u root --password --single-transaction --default-character-set&#x3D;utf8mb4 --compress-output&#x3D;LZ4 --result-file&#x3D;&quot;C:\mysql-ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="260801-mysqlpump导出-LZ4.md">
+<meta property="og:url" content="https://owen-chenao.github.io/2026/09/04/26/2608/260801-mysqlpump%E5%AF%BC%E5%87%BA-LZ4-md/index.html">
+<meta property="og:site_name" content="(ALL-AI)Think. Code. Repeat.">
+<meta property="og:description" content="导出LZ4压缩文件12345678910111213mysqlpump.exe --no-defaults -h 127.0.0.1 -P 3306 -u root --password --single-transaction --default-character-set&#x3D;utf8mb4 --compress-output&#x3D;LZ4 --result-file&#x3D;&quot;C:\mysql-ba">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-09-04T03:42:47.000Z">
+<meta property="article:modified_time" content="2026-09-04T06:38:49.068Z">
+<meta property="article:author" content="owen">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.1" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.1" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.1" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>owen</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/owen-chenao"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+    <a class="more-menus">更多菜单</a>
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(164)</small>
+            
+        </div>
+    </li>
+    
+    
+        
+            <li class="tag-item">
+                <div data-tag-search="AiAgent">
+                    # AiAgent
+                </div>
+            </li>
+        
+            <li class="tag-item">
+                <div data-tag-search="IOT">
+                    # IOT
+                </div>
+            </li>
+        
+            <li class="tag-item">
+                <div data-tag-search="Linux">
+                    # Linux
+                </div>
+            </li>
+        
+            <li class="tag-item">
+                <div data-tag-search="Windows">
+                    # Windows
+                </div>
+            </li>
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+                <a class="dynamic-menu site_url"
+                   
+                   href="/archives">归档</a>
+        
+            
+                <a class="dynamic-menu "
+                   target="_blank"
+                        
+                   href="https://github.com/owen-chenao">GitHub</a>
+        
+    </div>
+    <div>
+        
+            <a class="about  site_url"
+               
+               href="/about">About</a>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="164">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-tag" data-title="label"></i>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>安装</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>备份</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>串口通信</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>副本集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具使用</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>离线安装</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>流程图</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>排障</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设备配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据备份</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据恢复</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络配置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>西门子</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>协议转换</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>优化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>远程连接</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>远程桌面</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>转载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AI工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AiAgent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AngularJS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Chrome</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CPU架构</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>DCOM</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FRP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>FTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GitHub</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GitHub Actions</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>GitHub Pages</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IDEA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>IOT</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>KEPServerEX</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>LabVIEW</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Modbus</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Monaco Editor</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MongoDB</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MQTT</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>MySQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node.js</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NTP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>OPC</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PLC</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RAG</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RPA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SSH</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>TCP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Token</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Ubuntu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>VirtualBox</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WinCC</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Windows</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2026/09/04/26/2608/260801-mysqlpump%E5%AF%BC%E5%87%BA-LZ4-md/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="260801-mysqlpump导出-LZ4.md">260801-mysqlpump导出-LZ4.md</span>
+            <span class="post-date" title="2026-09-04 11:42:47">2026/09/04</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/09/04/ai/260904-AI%E3%80%81AIGC%E3%80%81AGI-%E6%98%AF%E4%BB%80%E4%B9%88%E5%92%8C%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="260904-AI、AIGC、AGI.是什么和区别">260904-AI、AIGC、AGI.是什么和区别</span>
+            <span class="post-date" title="2026-09-04 10:04:40">2026/09/04</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/09/03/26/2609/260903-sqlite-vacuum-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="260903-sqlite-vacuum-压缩文件">260903-sqlite-vacuum-压缩文件</span>
+            <span class="post-date" title="2026-09-03 12:16:55">2026/09/03</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/09/01/26/2609/260901-JetBrains-AI-Assistant-IDEA-%E9%87%8C-AI-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90CommitMessage/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="260901.JetBrains AI Assistant.IDEA 里 AI 自动生成CommitMessage">260901.JetBrains AI Assistant.IDEA 里 AI 自动生成CommitMessage</span>
+            <span class="post-date" title="2026-09-01 10:02:28">2026/09/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/30/aiAgent/%E9%97%AE%E9%A2%98.Agent%E7%A9%B7%E4%B8%BE%E9%AA%8C%E8%AF%81/"
+           data-tag="AiAgent"
+           data-author="" >
+            <span class="post-title" title="怎么解决 Agent 穷举数据的问题">怎么解决 Agent 穷举数据的问题</span>
+            <span class="post-date" title="2026-08-31 00:00:00">2026/08/31</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/28/aiAgent/260828-ai-agent%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E6%95%B4%E7%90%86/"
+           data-tag="AiAgent"
+           data-author="" >
+            <span class="post-title" title="260828.ai-agent关键技术整理">260828.ai-agent关键技术整理</span>
+            <span class="post-date" title="2026-08-28 10:18:49">2026/08/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/27/aiAgent/RAG%20%E5%92%8C%E5%90%91%E9%87%8F%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/"
+           data-tag="AiAgent,RAG"
+           data-author="" >
+            <span class="post-title" title="RAG 和向量库的区别是什么">RAG 和向量库的区别是什么</span>
+            <span class="post-date" title="2026-08-28 00:00:00">2026/08/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/20/26/2608/260820-omron-cx-programer%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E8%BD%AC%E6%8D%A2%E5%88%B0%E6%98%8E%E6%96%87%E4%BB%A3%E7%A0%81CXT/"
+           data-tag="PLC"
+           data-author="" >
+            <span class="post-title" title="260820-omron-cx programer的程序如何转换到明文代码CXT">260820-omron-cx programer的程序如何转换到明文代码CXT</span>
+            <span class="post-date" title="2026-08-20 17:06:43">2026/08/20</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/15/26/2608/260815-Monaco-%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5-%E5%AE%9E%E7%8E%B0%E5%BF%AB%E9%80%9F%E7%9A%84%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"
+           data-tag="配置,Monaco Editor,工具使用"
+           data-author="" >
+            <span class="post-title" title="260815-Monaco.配置代码片段.实现快速的插入代码模板">260815-Monaco.配置代码片段.实现快速的插入代码模板</span>
+            <span class="post-date" title="2026-08-15 11:00:08">2026/08/15</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/13/26/2608/260813-USB.RS232%E5%92%8CRS485%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB/"
+           data-tag="串口通信"
+           data-author="" >
+            <span class="post-title" title="260813-USB.RS232和RS485的区别和联系">260813-USB.RS232和RS485的区别和联系</span>
+            <span class="post-date" title="2026-08-13 09:19:34">2026/08/13</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/11/26/2608/260811-labview-code%E4%BB%A3%E7%A0%81%E5%AF%BC%E5%87%BAxml/"
+           data-tag="LabVIEW,配置"
+           data-author="" >
+            <span class="post-title" title="260811-labview-code代码导出xml">260811-labview-code代码导出xml</span>
+            <span class="post-date" title="2026-08-11 09:47:35">2026/08/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/10/26/2608/260810-mysql-mysqldump-gzip%E5%85%A8%E5%BA%93%E5%A4%87%E4%BB%BD-%E5%8F%AF%E6%8E%92%E9%99%A4%E8%A1%A8/"
+           data-tag="MySQL,备份,数据备份"
+           data-author="" >
+            <span class="post-title" title="260810-mysql-mysqldump-gzip全库备份(可排除表)">260810-mysql-mysqldump-gzip全库备份(可排除表)</span>
+            <span class="post-date" title="2026-08-10 10:30:42">2026/08/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/07/26/2608/260807-MySQL%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%88%86%E6%95%A3%E5%AD%98%E5%82%A8%E5%88%B0%E5%A4%9A%E4%B8%AA%E7%A3%81%E7%9B%98-%E9%80%9A%E7%94%A8%E8%A1%A8%E7%A9%BA%E9%97%B4-General-Tablespace/"
+           data-tag="MySQL,配置"
+           data-author="" >
+            <span class="post-title" title="260807-MySQL配置数据分散存储到多个磁盘-通用表空间 (General Tablespace)">260807-MySQL配置数据分散存储到多个磁盘-通用表空间 (General Tablespace)</span>
+            <span class="post-date" title="2026-08-07 11:37:36">2026/08/07</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/03/26/2608/260803-idea-%E5%9C%A8Idea%E4%B8%AD%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9ignoreFiles/"
+           data-tag="IDEA"
+           data-author="" >
+            <span class="post-title" title="260803-idea-在Idea中隐藏指定文件文件夹ignoreFiles">260803-idea-在Idea中隐藏指定文件文件夹ignoreFiles</span>
+            <span class="post-date" title="2026-08-03 17:46:40">2026/08/03</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/08/01/26/2608/260801-mysqldump%E5%8E%8B%E7%BC%A9%E5%AF%BC%E5%87%BA-ZLIB-LZ4(mysqlpump&mysql)5.7.26-%E5%8E%8B%E7%BC%A9%E5%AF%BC%E5%87%BA/"
+           data-tag="MySQL,配置,备份,数据备份"
+           data-author="" >
+            <span class="post-title" title="260801-mysqldump压缩导出-ZLIB-LZ4(mysqlpump&amp;mysql)5.7.26-压缩导出-md">260801-mysqldump压缩导出-ZLIB-LZ4(mysqlpump&amp;mysql)5.7.26-压缩导出-md</span>
+            <span class="post-date" title="2026-08-01 09:18:45">2026/08/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/07/31/26/2608/260801-mysqldump-table/"
+           data-tag="MySQL,数据备份"
+           data-author="" >
+            <span class="post-title" title="260801-mysqldump导出指定表">260801-mysqldump导出指定表</span>
+            <span class="post-date" title="2026-08-01 00:00:00">2026/08/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/07/31/26/2608/260801-mysqlrestore-table-insert/"
+           data-tag="MySQL,数据恢复"
+           data-author="" >
+            <span class="post-title" title="260801-mysql导入指定表数据">260801-mysql导入指定表数据</span>
+            <span class="post-date" title="2026-08-01 00:00:00">2026/08/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/04/01/26/2604/260401-openclaw-cn-uninstall%E5%8D%B8%E8%BD%BD/"
+           data-tag="AI工具"
+           data-author="" >
+            <span class="post-title" title="260401-openclaw-cn-uninstall卸载">260401-openclaw-cn-uninstall卸载</span>
+            <span class="post-date" title="2026-04-01 09:12:54">2026/04/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/03/16/26/2603/260317-openclaw-skills%E6%8A%80%E8%83%BD%E6%95%B4%E7%90%86/"
+           data-tag="AI工具"
+           data-author="" >
+            <span class="post-title" title="260317-openclaw-skills技能整理">260317-openclaw-skills技能整理</span>
+            <span class="post-date" title="2026-03-17 00:00:00">2026/03/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/03/10/26/2603/260311-openclaw-cn%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/"
+           data-tag="安装,AI工具"
+           data-author="" >
+            <span class="post-title" title="260311-openclaw-cn部署和使用">260311-openclaw-cn部署和使用</span>
+            <span class="post-date" title="2026-03-11 00:00:00">2026/03/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/03/10/26/2603/260310-openclaw%E9%83%A8%E7%BD%B2%E5%92%8C%E4%BD%BF%E7%94%A8/"
+           data-tag="安装,AI工具"
+           data-author="" >
+            <span class="post-title" title="260310-openclaw部署和使用">260310-openclaw部署和使用</span>
+            <span class="post-date" title="2026-03-10 18:19:16">2026/03/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/03/09/26/2603/260309-Virtualbox%E4%B8%BB%E6%9C%BA%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E6%96%87%E4%BB%B6%E5%A4%B9%E5%85%B1%E4%BA%AB%E5%8F%8A%E5%8F%8C%E5%90%91%E6%8B%B7%E8%B4%9D%EF%BC%88Windows-Windows-Windows-Linux%EF%BC%89/"
+           data-tag="Linux,Windows,VirtualBox"
+           data-author="" >
+            <span class="post-title" title="260309-Virtualbox主机和虚拟机之间文件夹共享及双向拷贝（Windows&lt;-&gt;Windows, Windows&lt;-&gt;Linux）">260309-Virtualbox主机和虚拟机之间文件夹共享及双向拷贝（Windows&lt;-&gt;Windows, Windows&lt;-&gt;Linux）</span>
+            <span class="post-date" title="2026-03-09 20:51:05">2026/03/09</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/03/08/26/2603/260308-virtualbox-ubuntu-initrams-%E6%96%87%E4%BB%B6%E9%94%99%E8%AF%AF/"
+           data-tag="排障,Ubuntu,VirtualBox"
+           data-author="" >
+            <span class="post-title" title="260308-virtualbox-ubuntu-initrams-文件错误">260308-virtualbox-ubuntu-initrams-文件错误</span>
+            <span class="post-date" title="2026-03-08 21:09:50">2026/03/08</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/27/26/2602/260227-Linux-pid-proc(exe%20&%20cwd%20&%20fd%20&%20cmdline)%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="260227-Linux-pid-proc(exe &amp; cwd &amp; fd &amp; cmdline)查找文件位置">260227-Linux-pid-proc(exe &amp; cwd &amp; fd &amp; cmdline)查找文件位置</span>
+            <span class="post-date" title="2026-02-27 17:38:13">2026/02/27</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/26/26/2602/260226-nodejs-yarn%E6%93%8D%E4%BD%9C/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="260226-nodejs-yarn操作">260226-nodejs-yarn操作</span>
+            <span class="post-date" title="2026-02-26 16:27:15">2026/02/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/25/26/2602/260225-git-config-global%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0/"
+           data-tag="配置,Git"
+           data-author="" >
+            <span class="post-title" title="260225-git config --global全局配置参数">260225-git config --global全局配置参数</span>
+            <span class="post-date" title="2026-02-25 20:24:31">2026/02/25</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/10/26/2602/260210-mongodb-copyDatabase-show-database-%E5%A6%82%E4%BD%95%E8%B0%83%E6%95%B4%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E7%A7%B0/"
+           data-tag="配置,MongoDB"
+           data-author="" >
+            <span class="post-title" title="260210-mongodb(copyDatabase) show database 如何调整数据库名称">260210-mongodb(copyDatabase) show database 如何调整数据库名称</span>
+            <span class="post-date" title="2026-02-10 13:36:04">2026/02/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/09/26/2602/260210-MongoDBHA-MongoDB%E9%9B%86%E7%BE%A4-%E9%87%8D%E7%BD%AE%E7%BB%91%E5%AE%9A%E5%85%B3%E7%B3%BB-Replica-Set-%E5%89%AF%E6%9C%AC%E9%9B%86%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"
+           data-tag="配置,MongoDB,安装,副本集"
+           data-author="" >
+            <span class="post-title" title="260210-MongoDBHA-MongoDB集群-重置绑定关系-(Replica Set)副本集集群搭建">260210-MongoDBHA-MongoDB集群-重置绑定关系-(Replica Set)副本集集群搭建</span>
+            <span class="post-date" title="2026-02-10 00:00:00">2026/02/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/05/26/2602/2602-(perfmon.msc)Windows%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%8E%92%E6%9F%A5CPU%E5%8D%A0%E7%94%A8%E9%AB%98%E8%BF%9B%E7%A8%8B%E9%97%AE%E9%A2%98/"
+           data-tag="CPU架构,排障,Windows"
+           data-author="" >
+            <span class="post-title" title="2602-(perfmon.msc)Windows定位和排查CPU占用高进程问题">2602-(perfmon.msc)Windows定位和排查CPU占用高进程问题</span>
+            <span class="post-date" title="2026-02-05 16:42:24">2026/02/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/05/26/2602/2602-jenkins%E9%85%8D%E7%BD%AE%E4%BF%9D%E5%AD%98-%E9%87%8D%E5%90%AF%E6%97%A0%E6%95%88(XML%E4%BF%9D%E5%AD%98%E5%BC%82%E5%B8%B8)-Plugins(ssh-server)-%E4%BF%9D%E5%AD%98%E4%BA%86%EF%BC%8C%E9%87%8D%E5%90%AF%E5%8F%88%E8%BF%98%E5%8E%9F%E4%BA%86%EF%BC%8C%E6%98%AF%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/"
+           data-tag="配置,排障,Linux,SSH"
+           data-author="" >
+            <span class="post-title" title="jenkins配置保存-重启无效(XML保存异常)-Plugins(ssh-server)-保存了，重启又还原了，是怎么回事.">jenkins配置保存-重启无效(XML保存异常)-Plugins(ssh-server)-保存了，重启又还原了，是怎么回事.</span>
+            <span class="post-date" title="2026-02-05 13:48:15">2026/02/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/02/05/26/2602/2602-DockerMongoDB%E9%87%8D%E7%BD%AE%E5%AF%86%E7%A0%81-RestMongoDBPassWord/"
+           data-tag="MongoDB,Docker"
+           data-author="" >
+            <span class="post-title" title="2602-DockerMongoDB重置密码">2602-DockerMongoDB重置密码</span>
+            <span class="post-date" title="2026-02-05 10:29:50">2026/02/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/23/26/2601/260123-windows(mstsc%E8%BF%9C%E7%A8%8B%E9%BB%91%E5%B1%8F)-11-%E5%BC%80%E6%9C%BA%E5%90%8E%E5%BF%85%E9%A1%BB%E5%9C%A8%E7%94%B5%E8%84%91%E4%B8%8A%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E5%90%8E%EF%BC%8C%E6%89%8D%E8%83%BD%E8%BF%9C%E7%A8%8B%EF%BC%8C%E6%98%AF%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B/"
+           data-tag="配置,排障,Windows,远程桌面,远程连接"
+           data-author="" >
+            <span class="post-title" title="260123-windows开机后必须在电脑上输入密码后，才能远程，是怎么回事">260123-windows开机后必须在电脑上输入密码后，才能远程，是怎么回事</span>
+            <span class="post-date" title="2026-01-23 09:27:39">2026/01/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/21/26/2601/260121-ubuntu-%E5%9F%9F%E5%90%8Dping-%E6%8F%90%E7%A4%BATemporary-failure-in-name-resolution-ping-baidu-com/"
+           data-tag="Ubuntu"
+           data-author="" >
+            <span class="post-title" title="260121-ubuntu 域名ping 提示Temporary failure in name resolution-ping-baidu.com">260121-ubuntu 域名ping 提示Temporary failure in name resolution-ping-baidu.com</span>
+            <span class="post-date" title="2026-01-21 10:55:36">2026/01/21</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/20/26/2601/260121-Ubuntu%E7%94%9F%E6%88%90docker%E8%AF%81%E4%B9%A6-%E8%AF%81%E4%B9%A6%E9%9C%80%E8%A6%81%E6%97%A0%E5%AF%86%E7%A0%81/"
+           data-tag="Ubuntu,Docker"
+           data-author="" >
+            <span class="post-title" title="260121-Ubuntu生成docker证书">260121-Ubuntu生成docker证书</span>
+            <span class="post-date" title="2026-01-21 00:00:00">2026/01/21</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/19/26/2601/260119-linux-redis%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/"
+           data-tag="Linux,安装,离线安装"
+           data-author="" >
+            <span class="post-title" title="260119-linux-redis离线安装">260119-linux-redis离线安装</span>
+            <span class="post-date" title="2026-01-19 22:10:31">2026/01/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/19/26/2601/260119-1Ubuntu20-04(netplan%20apply)%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%8A%A0%E8%BD%BD%E5%9B%BA%E5%AE%9A%E8%B7%AF%E7%94%B1-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E5%9B%BA%E5%AE%9A%E8%B7%AF%E7%94%B1/"
+           data-tag="Ubuntu,网络配置"
+           data-author="" >
+            <span class="post-title" title="260119-Ubuntu20-04(netplan apply)系统启动后直接加载固定路由-系统启动固定路由">260119-Ubuntu20-04(netplan apply)系统启动后直接加载固定路由-系统启动固定路由</span>
+            <span class="post-date" title="2026-01-19 09:53:01">2026/01/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/19/26/2601/260119-2Ubuntu20-04(systemd-networkd)%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%8A%A0%E8%BD%BD%E5%9B%BA%E5%AE%9A%E8%B7%AF%E7%94%B1-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E5%9B%BA%E5%AE%9A%E8%B7%AF%E7%94%B1-etc-systemd-network-10-enp1s0-network/"
+           data-tag="Ubuntu,网络配置"
+           data-author="" >
+            <span class="post-title" title="260119-Ubuntu20.04系统启动后直接加载固定路由-/etc/systemd/network/10-enp1s0.network">260119-Ubuntu20.04系统启动后直接加载固定路由-/etc/systemd/network/10-enp1s0.network</span>
+            <span class="post-date" title="2026-01-19 09:53:01">2026/01/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/19/26/2601/260119-3Ubuntu20-04(systemd-networkd&netplan%20apply%E4%B8%8D%E8%83%BD%E5%85%B1%E7%94%A8%E8%B0%81%E5%85%88%E5%90%AF%E5%8A%A8%E8%B0%81%E5%B0%B1%E6%8A%8A%E5%8F%A6%E4%B8%80%E4%BB%BD%E5%86%B2%E6%8E%89)/"
+           data-tag="Ubuntu,网络配置"
+           data-author="" >
+            <span class="post-title" title="260119-260119-Ubuntu20-04(systemd-networkd&amp;netplan apply不能共用谁先启动谁就把另一份冲掉)">260119-260119-Ubuntu20-04(systemd-networkd&amp;netplan apply不能共用谁先启动谁就把另一份冲掉)</span>
+            <span class="post-date" title="2026-01-19 09:53:01">2026/01/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/15/26/2601/260115-Virtualbox%EF%BF%BD%EF%BF%BD100%25-%07%EF%BF%BD%EF%BF%BDg%EF%BF%BD%EF%BF%BDx/"
+           data-tag="VirtualBox,备份"
+           data-author="" >
+            <span class="post-title" title="260115-Virtualbox磁盘100%-备份快照惹的祸">260115-Virtualbox磁盘100%-备份快照惹的祸</span>
+            <span class="post-date" title="2026-01-15 22:42:30">2026/01/15</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/14/26/2601/260114-Ubuntu20-04-uname-ra%E6%8C%87%E5%AE%9A%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7OR%E9%99%8D%E7%BA%A7linux-image-5-4-0-150-generic/"
+           data-tag="Linux,安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="260114-Ubuntu20.04-uname-ra指定内核升级OR降级linux-image-5.4.0-150-generic">260114-Ubuntu20.04-uname-ra指定内核升级OR降级linux-image-5.4.0-150-generic</span>
+            <span class="post-date" title="2026-01-14 17:02:19">2026/01/14</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/12/26/2601/260112-Linux-vmstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2%E6%98%AF%E5%90%A6%E6%AD%A3%E5%B8%B8/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="260112-Linux-vmstat查看系统上下文切换是否正常">260112-Linux-vmstat查看系统上下文切换是否正常</span>
+            <span class="post-date" title="2026-01-12 14:06:14">2026/01/12</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/06/26/2601/260106-WinCC-%E9%80%9A%E4%BF%A1%E8%BF%9E%E6%8E%A5%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F/"
+           data-tag="WinCC,IOT"
+           data-author="" >
+            <span class="post-title" title="260106-WinCC 通信连接的状态变量">260106-WinCC 通信连接的状态变量</span>
+            <span class="post-date" title="2026-01-06 14:16:33">2026/01/06</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2026/01/05/26/2601/260106-WinCC-%E9%87%87%E9%9B%86%E6%95%B0%E6%8D%AE-%E7%9B%91%E6%8E%A7OMS-%E8%BF%9E%E6%8E%A5%E6%98%AF%E5%90%A6%E6%9C%89%E6%95%88/"
+           data-tag="排障,WinCC,IOT"
+           data-author="" >
+            <span class="post-title" title="260106-wincc采集数据-监控OMS-连接是否有效">260106-wincc采集数据-监控OMS-连接是否有效</span>
+            <span class="post-date" title="2026-01-06 00:00:00">2026/01/06</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/12/24/25/2512/251224-MongoDB-SlowQuery%E6%85%A2%E6%9F%A5%E8%AF%A2%E5%AE%9A%E4%BD%8D/"
+           data-tag="排障,MongoDB"
+           data-author="" >
+            <span class="post-title" title="251224-MongoDB-SlowQuery慢查询定位">251224-MongoDB-SlowQuery慢查询定位</span>
+            <span class="post-date" title="2025-12-24 17:22:18">2025/12/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/12/10/25/2512/251210-google-chrome-bookmark-%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%BC%E5%87%BA%E4%B9%A6%E7%AD%BE/"
+           data-tag="配置,工具使用,Chrome"
+           data-author="" >
+            <span class="post-title" title="251210-google-chrome-bookmark-谷歌浏览器导出书签">251210-google-chrome-bookmark-谷歌浏览器导出书签</span>
+            <span class="post-date" title="2025-12-10 18:01:18">2025/12/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/12/05/25/2512/251205-OPCDA-TCP-%E9%80%9A%E8%BF%87OPCLink%E5%B7%A5%E5%85%B7%E5%B0%86OPCDA%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E9%85%8D%E7%BD%AE%E5%B9%B6%E4%B8%8A%E5%8F%91TCPServer/"
+           data-tag="配置,OPC,TCP,协议转换"
+           data-author="" >
+            <span class="post-title" title="251205-OPCDA&amp;TCP-通过OPCLink工具将OPCDA协议数据配置并上发TCPServer">251205-OPCDA&amp;TCP-通过OPCLink工具将OPCDA协议数据配置并上发TCPServer</span>
+            <span class="post-date" title="2025-12-05 17:06:30">2025/12/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/12/05/25/2512/251205-java-threadpool-future-get%E6%89%A7%E8%A1%8C%E5%90%8C%E6%AD%A5%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E4%BC%98%E5%8C%96/"
+           data-tag="排障,Java,优化"
+           data-author="" >
+            <span class="post-title" title="251205-java-threadpool-future.get执行同步超时问题优化">251205-java-threadpool-future.get执行同步超时问题优化</span>
+            <span class="post-date" title="2025-12-05 17:03:22">2025/12/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/12/01/25/2512/251201-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0RPA%E4%B8%9A%E5%8A%A1%E8%8A%82%E7%82%B9%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E9%87%87%E9%9B%86%E5%92%8C%E7%9B%91%E6%8E%A7/"
+           data-tag="排障,RPA"
+           data-author="" >
+            <span class="post-title" title="251201-如何实现RPA业务节点执行过程采集和监控">251201-如何实现RPA业务节点执行过程采集和监控</span>
+            <span class="post-date" title="2025-12-01 16:39:53">2025/12/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/25/25/2511/251126-Wincc%E8%BF%9E%E6%8E%A5PLC%E5%B9%B6%E8%AF%BB%E5%8F%96%E5%8F%98%E9%87%8F%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"
+           data-tag="PLC,WinCC"
+           data-author="" >
+            <span class="post-title" title="251126-Wincc连接PLC并读取变量相关操作">251126-Wincc连接PLC并读取变量相关操作</span>
+            <span class="post-date" title="2025-11-26 00:00:00">2025/11/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/25/25/2511/251126-wincc%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"
+           data-tag="安装,WinCC"
+           data-author="" >
+            <span class="post-title" title="251126-wincc安装教程">251126-wincc安装教程</span>
+            <span class="post-date" title="2025-11-26 00:00:00">2025/11/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/25/25/2511/251126-%E8%A5%BF%E9%97%A8%E5%AD%90wincc-%E8%AF%BB%E5%8F%96%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87tcp%E5%8D%8F%E8%AE%AE/"
+           data-tag="WinCC,TCP"
+           data-author="" >
+            <span class="post-title" title="251126-西门子wincc 读取变量地址 如何通过tcp协议">251126-西门子wincc 读取变量地址 如何通过tcp协议</span>
+            <span class="post-date" title="2025-11-26 00:00:00">2025/11/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/23/25/2511/251124-(pandoc-TyporaExportWord-Typora2word&TyporaToWord)typora%E5%AF%BC%E5%87%BAword-pandoc/"
+           data-tag="配置"
+           data-author="" >
+            <span class="post-title" title="251124-(TyporaExportWord)typora导出word-pandoc">251124-(TyporaExportWord)typora导出word-pandoc</span>
+            <span class="post-date" title="2025-11-24 00:00:00">2025/11/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/17/25/2511/251118-NTP(Chrony)-Ubuntu%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5-chrony/"
+           data-tag="Ubuntu,NTP"
+           data-author="" >
+            <span class="post-title" title="251118-NTP-Ubuntu时间同步(chrony)">251118-NTP-Ubuntu时间同步(chrony)</span>
+            <span class="post-date" title="2025-11-18 00:00:00">2025/11/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/17/25/2511/251118-NTP(systemd-timesyncd)-systemd-timesyncd-%E9%85%8D%E7%BD%AE%E5%86%85%E7%BD%91%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5/"
+           data-tag="配置,NTP"
+           data-author="" >
+            <span class="post-title" title="251118-NTP(systemd-timesyncd)配置内网时间同步">251118-NTP(systemd-timesyncd)配置内网时间同步</span>
+            <span class="post-date" title="2025-11-18 00:00:00">2025/11/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/17/25/2511/251118-NTP-Ubuntu%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5(systemd-timesyncd%E5%92%8Cchrony%E5%8C%BA%E5%88%AB)/"
+           data-tag="Ubuntu,NTP"
+           data-author="" >
+            <span class="post-title" title="251118-NTP-Ubuntu时间同步(systemd-timesyncd和chrony区别)">251118-NTP-Ubuntu时间同步(systemd-timesyncd和chrony区别)</span>
+            <span class="post-date" title="2025-11-18 00:00:00">2025/11/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/16/25/2511/251117-Ntp-Ubuntu%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E9%85%8D%E7%BD%AE(systemd-timesyncd&chrony)-%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%97%B6%E9%97%B4(NTP)/"
+           data-tag="配置,Ubuntu,NTP"
+           data-author="" >
+            <span class="post-title" title="251117-Ntp-Ubuntu时间同步配置-自动同步网络时间(NTP)">251117-Ntp-Ubuntu时间同步配置-自动同步网络时间(NTP)</span>
+            <span class="post-date" title="2025-11-17 00:00:00">2025/11/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/11/25/2511/251112-%E8%B0%B7%E6%AD%8Cchrome-%E9%9C%80%E8%A6%81%E8%AE%A4%E8%AF%81%EF%BC%9A%E6%82%A8%E7%99%BB%E5%BD%95%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%97%B6%EF%BC%8C%E6%82%A8%E7%9A%84%E7%99%BB%E5%BD%95%E5%AF%86%E9%92%A5%E7%8E%AF%E6%9C%AA%E8%A2%AB%E8%A7%A3%E9%94%81/"
+           data-tag="Chrome"
+           data-author="" >
+            <span class="post-title" title="251112-谷歌chrome-需要认证：您登录计算机时，您的登录密钥环未被解锁">251112-谷歌chrome-需要认证：您登录计算机时，您的登录密钥环未被解锁</span>
+            <span class="post-date" title="2025-11-12 00:00:00">2025/11/12</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/10/25/2511/251111-ubuntu20-04-chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A6%81%E7%94%A8%E6%9B%B4%E6%96%B0(sudo%20apt-mark%20hold%20google-chrome-stable)/"
+           data-tag="Chrome,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="251111-ubuntu20.04-chrome浏览器禁用更新">251111-ubuntu20.04-chrome浏览器禁用更新</span>
+            <span class="post-date" title="2025-11-11 00:00:00">2025/11/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/09/25/2511/251110-Ubuntu-DISPLAY-Ubuntu%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95DISPLAY/"
+           data-tag="Windows,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="251110-BIOS-IPC-工控机重装按键">251110-BIOS-IPC-工控机重装按键</span>
+            <span class="post-date" title="2025-11-10 00:00:00">2025/11/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/11/09/25/2511/251110-WindowsPE%E8%80%81%E6%AF%9B%E6%A1%83-BIOS-Keypress-BIOSKeyPress-IPC-%E5%B7%A5%E6%8E%A7%E6%9C%BA%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%8C%89%E9%94%AE/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="251110-WindowsPE老毛桃-BIOS-Keypress-BIOSKeyPress-IPC-工控机重装系统按键">251110-WindowsPE老毛桃-BIOS-Keypress-BIOSKeyPress-IPC-工控机重装系统按键</span>
+            <span class="post-date" title="2025-11-10 00:00:00">2025/11/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/19/25/2510/251019-Nginx%E9%85%8D%E7%BD%AEHttp%E8%B7%B3%E8%BD%ACHttps/"
+           data-tag="配置,Nginx"
+           data-author="" >
+            <span class="post-title" title="251019-Nginx配置Http跳转Https">251019-Nginx配置Http跳转Https</span>
+            <span class="post-date" title="2025-10-19 08:33:18">2025/10/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/19/25/2510/251019-Nginx%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A-WFW%E7%A6%81%E6%AD%A2IP%E8%AE%BF%E9%97%AE/"
+           data-tag="配置,Nginx"
+           data-author="" >
+            <span class="post-title" title="251019-Nginx域名绑定-WFW禁止IP访问">251019-Nginx域名绑定-WFW禁止IP访问</span>
+            <span class="post-date" title="2025-10-19 08:13:37">2025/10/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/18/25/2510/251018-ubuntu-apt-download-nginx-apt%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BDNginx%E5%8F%8A%E5%85%B6%E6%89%80%E6%9C%89%E4%BE%9D%E8%B5%96%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%EF%BC%8C%E4%BD%86%E4%B8%8D%E4%BC%9A%E5%AE%89%E8%A3%85%E5%AE%83%E4%BB%AC/"
+           data-tag="安装,离线安装,Ubuntu,Nginx"
+           data-author="" >
+            <span class="post-title" title="251018-ubuntu-apt-download-nginx-apt离线下载Nginx及其所有依赖的软件包，但不会安装它们">251018-ubuntu-apt-download-nginx-apt离线下载Nginx及其所有依赖的软件包，但不会安装它们</span>
+            <span class="post-date" title="2025-10-18 21:25:12">2025/10/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/15/25/2510/251015-WindowServer2019%E8%BF%9C%E7%A8%8B%E9%85%8D%E7%BD%AE%E6%8C%89%E9%92%AE%E9%83%BD%E6%98%AF%E7%A6%81%E7%94%A8-%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/"
+           data-tag="配置,Windows"
+           data-author="" >
+            <span class="post-title" title="251015-WindowServer2019远程配置按钮都是禁用-处理方式">251015-WindowServer2019远程配置按钮都是禁用-处理方式</span>
+            <span class="post-date" title="2025-10-15 09:42:37">2025/10/15</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/15/25/2510/251015-windows(mstsc%E8%BF%9C%E7%A8%8B%E9%BB%91%E5%B1%8F)(%E5%A6%82%E4%BD%95%E2%80%9C%E9%87%8D%E5%90%AF%E5%90%8E%E6%97%A0%E9%9C%80%E6%9C%AC%E5%9C%B0%E7%99%BB%E5%BD%95%E2%80%9D%E4%B9%9F%E8%83%BD%E7%9B%B4%E6%8E%A5MSTSC)windows%E9%BB%91%E5%B1%8F-windowsMstsc-windows%E8%BF%9C%E7%A8%8B%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE-%E7%99%BB%E8%AE%B0%E5%A4%84%E7%90%86/"
+           data-tag="排障,Windows,远程桌面,远程连接"
+           data-author="" >
+            <span class="post-title" title="251015-(如何“重启后无需本地登录”也能直接MSTSC)windows黑屏-windowsMstsc-windows远程拒绝访问-登记处理">251015-(如何“重启后无需本地登录”也能直接MSTSC)windows黑屏-windowsMstsc-windows远程拒绝访问-登记处理</span>
+            <span class="post-date" title="2025-10-15 09:36:50">2025/10/15</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/14/25/2510/251014-Windows%E8%BF%9C%E7%A8%8B-WindowsMstsc%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E7%AD%96%E7%95%A5%E9%85%8D%E7%BD%AE/"
+           data-tag="配置,Windows,远程桌面,远程连接"
+           data-author="" >
+            <span class="post-title" title="251014-Windows远程-WindowsMstsc远程登录策略配置">251014-Windows远程-WindowsMstsc远程登录策略配置</span>
+            <span class="post-date" title="2025-10-14 14:19:08">2025/10/14</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/10/25/2510/251011-Ubuntu%E5%8D%87%E7%BA%A7SSH-Ubuntu20-22-24%E9%80%9A%E8%BF%87deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%96%B9%E5%BC%8F%E5%8D%87%E7%BA%A7openssh%E5%88%B09-9%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag="Linux,安装,Ubuntu,SSH"
+           data-author="" >
+            <span class="post-title" title="251011-Ubuntu升级SSH-Ubuntu20/22/24通过deb软件包方式升级openssh到9.9的方法">251011-Ubuntu升级SSH-Ubuntu20/22/24通过deb软件包方式升级openssh到9.9的方法</span>
+            <span class="post-date" title="2025-10-11 00:00:00">2025/10/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/10/25/2510/251011-Windows%E9%BB%91%E5%B1%8F-Windows%E7%B3%BB%E7%BB%9F%E9%BB%91%E5%B1%8F-Windows%E5%B1%8F%E5%B9%95%E4%B8%8D%E4%BA%AE-window-%E7%B3%BB%E7%BB%9F-%E7%94%A8%E5%90%84%E7%A7%8D%E5%B1%8F%E5%B9%95%E8%BF%9E%E6%8E%A5%EF%BC%8C%E9%83%BD%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"
+           data-tag="排障,Windows"
+           data-author="" >
+            <span class="post-title" title="251011-Windows黑屏-Windows系统黑屏-window-系统-用各种屏幕连接，都无法显示(屏幕不亮，主机正常运行的原因及解决方法-探究屏幕不亮但主机正常运行的原因)">251011-Windows黑屏-Windows系统黑屏-window-系统-用各种屏幕连接，都无法显示(屏幕不亮，主机正常运行的原因及解决方法-探究屏幕不亮但主机正常运行的原因)</span>
+            <span class="post-date" title="2025-10-11 00:00:00">2025/10/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/09/25/2510/251009-NVM%E5%AE%89%E8%A3%85%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BD%8D%E7%BD%AEWhen-Installing-NPM-looking-at-wrong-folder-location/"
+           data-tag="排障,安装,Node.js"
+           data-author="" >
+            <span class="post-title" title="251009-NVM安装提示错误的文件夹位置When Installing NPM looking at wrong folder location">251009-NVM安装提示错误的文件夹位置When Installing NPM looking at wrong folder location</span>
+            <span class="post-date" title="2025-10-09 23:21:55">2025/10/09</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/10/09/25/2510/251009-windows%E5%85%B1%E4%BA%ABWin10-11%E8%AE%BE%E7%BD%AE%E6%97%A0%E5%AF%86%E7%A0%81%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"
+           data-tag="配置,Windows"
+           data-author="" >
+            <span class="post-title" title="251009-windows共享Win10-11设置无密码访问共享文件夹">251009-windows共享Win10-11设置无密码访问共享文件夹</span>
+            <span class="post-date" title="2025-10-09 13:51:36">2025/10/09</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/29/25/2509/250929-Java-Semaphore%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="250929-Java-Semaphore信号量多线程并发控制">250929-Java-Semaphore信号量多线程并发控制</span>
+            <span class="post-date" title="2025-09-29 22:55:27">2025/09/29</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/27/25/2509/250927-redhat-RPM%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%92%8C%E5%8D%B8%E8%BD%BD%E8%BD%AF%E4%BB%B6(rpm%20-qa%20grep%20mongodb-org)/"
+           data-tag="MongoDB,安装"
+           data-author="" >
+            <span class="post-title" title="250927-RPM查看安装软件和卸载软件(rpm -qa | grep mongodb-org)">250927-RPM查看安装软件和卸载软件(rpm -qa | grep mongodb-org)</span>
+            <span class="post-date" title="2025-09-27 21:06:32">2025/09/27</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/13/25/2509/250913-Shell%E5%B7%A5%E5%85%B7Shell-MobaXterm%E9%87%8D%E7%BD%AE%E4%B8%BB%E5%AF%86%E7%A0%81%E5%B7%A5%E5%85%B7/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="250913-Shell工具Shell-MobaXterm重置主密码工具">250913-Shell工具Shell-MobaXterm重置主密码工具</span>
+            <span class="post-date" title="2025-09-13 09:47:37">2025/09/13</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/10/25/2509/250911-ubuntu%E7%B3%BB%E7%BB%9Fexcel%E5%AF%BC%E5%87%BA%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3sudo-apt-install-fontconfig-y/"
+           data-tag="配置,排障,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250911-ubuntu系统excel导出报错解决sudo apt install fontconfig -y">250911-ubuntu系统excel导出报错解决sudo apt install fontconfig -y</span>
+            <span class="post-date" title="2025-09-11 00:00:00">2025/09/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/02/25/2509/250902-Ubuntu20-04%E5%88%86%E8%BE%A8%E7%8E%87-%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA800x600%E7%9A%84%E5%88%86%E8%BE%A8%E7%8E%87%E6%80%8E%E4%B9%88%E5%8D%87%E7%BA%A7/"
+           data-tag="安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250902-ubuntu20.04分辨率-只有一个800x600的分辨率怎么升级">250902-ubuntu20.04分辨率-只有一个800x600的分辨率怎么升级</span>
+            <span class="post-date" title="2025-09-02 21:24:59">2025/09/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/01/25/2509/250901-MySQLImport%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE-%E4%BB%A5%E7%A1%AE%E4%BF%9D%E5%AD%97%E7%AC%A6%E9%9B%86%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7--default-character-set=utf8/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="250901-MySQLImport导入数据-以确保字符集的一致性--default-character-set=utf8">250901-MySQLImport导入数据-以确保字符集的一致性--default-character-set=utf8</span>
+            <span class="post-date" title="2025-09-01 12:22:58">2025/09/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/09/01/25/2509/250901-MySQL-LogFile-ib_logfile%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"
+           data-tag="MySQL,排障"
+           data-author="" >
+            <span class="post-title" title="250901-MySQL-LogFile-ib_logfile启动异常处理">250901-MySQL-LogFile-ib_logfile启动异常处理</span>
+            <span class="post-date" title="2025-09-01 09:43:45">2025/09/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/31/25/2509/250901-MySQL-skip-grant-tables%E8%B7%B3%E8%BF%87%E6%9D%83%E9%99%90%E8%A1%A8-%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%82%E5%B8%B8%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/"
+           data-tag="MySQL,排障"
+           data-author="" >
+            <span class="post-title" title="250901-MySQL--skip-grant-tables跳过权限表-处理数据库异常恢复数据">250901-MySQL--skip-grant-tables跳过权限表-处理数据库异常恢复数据</span>
+            <span class="post-date" title="2025-09-01 00:00:00">2025/09/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/30/25/2508/250830-1-Mongodb%E6%B8%85%E7%90%86%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87-db-runCommand-compact/"
+           data-tag="MongoDB"
+           data-author="" >
+            <span class="post-title" title="250830-Mongodb清理磁盘空间碎片-db-runCommand-compact">250830-Mongodb清理磁盘空间碎片-db-runCommand-compact</span>
+            <span class="post-date" title="2025-08-30 15:35:34">2025/08/30</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/30/25/2508/250830-2-Mongodb%E6%B8%85%E7%90%86%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E7%A2%8E%E7%89%87(repairDatabase&&Compact)/"
+           data-tag="MongoDB"
+           data-author="" >
+            <span class="post-title" title="250830-Mongodb清理磁盘空间碎片(repairDatabase&amp;&amp;Compact)">250830-Mongodb清理磁盘空间碎片(repairDatabase&amp;&amp;Compact)</span>
+            <span class="post-date" title="2025-08-30 15:35:34">2025/08/30</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/27/25/2508/250827-etc-fstab-ubuntu20-04-%E8%B7%B3%E8%BF%87%E7%A3%81%E7%9B%98%E6%A3%80%E6%9F%A5-%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8%E7%A6%81%E7%94%A8%E6%A3%80%E6%9F%A5-Ubuntu%20initramfs%20%E6%96%87%E4%BB%B6%E9%94%99%E8%AF%AF/"
+           data-tag="排障,Linux,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250827-ubuntu20.04-跳过磁盘检查-硬盘启动禁用检查-Ubuntu initramfs 文件错误">250827-ubuntu20.04-跳过磁盘检查-硬盘启动禁用检查-Ubuntu initramfs 文件错误</span>
+            <span class="post-date" title="2025-08-27 16:44:58">2025/08/27</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/27/25/2508/250827-%E8%A7%86%E9%A2%91%E6%B5%81%E6%92%AD%E6%94%BEVideo-%E4%BD%BF%E7%94%A8-FFmpeg-%E5%B0%86%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E4%B8%BA-H-264-%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="250827-视频流播放Video-使用 FFmpeg 将视频转码为 H.264 编码格式">250827-视频流播放Video-使用 FFmpeg 将视频转码为 H.264 编码格式</span>
+            <span class="post-date" title="2025-08-27 16:40:31">2025/08/27</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/23/25/2508/250823-JRebel-IDEA%E6%94%AF%E6%8C%81%E7%83%AD%E9%83%A8%E7%BD%B2/"
+           data-tag="安装,IDEA"
+           data-author="" >
+            <span class="post-title" title="250823-JRebel-IDEA支持热部署">250823-JRebel-IDEA支持热部署</span>
+            <span class="post-date" title="2025-08-23 19:56:44">2025/08/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/23/25/2508/250823-(Permission%20denied)SELinux%E5%92%8CAppArmor%E6%98%AFLinux%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97%EF%BC%8C%E5%AE%83%E4%BB%AC%E5%8F%AF%E4%BB%A5%E9%99%90%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90%EF%BC%8C%E5%8D%B3%E4%BD%BF%E4%BD%A0%E4%BB%A5root%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E8%BF%90%E8%A1%8C/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="250823-(Permission denied)SELinux和AppArmor是Linux系统中的安全模块，它们可以限制文件的执行权限，即使你以root用户身份运行">250823-(Permission denied)SELinux和AppArmor是Linux系统中的安全模块，它们可以限制文件的执行权限，即使你以root用户身份运行</span>
+            <span class="post-date" title="2025-08-23 14:44:52">2025/08/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/20/25/2508/250820-yum-localinstall-%E4%BD%BF%E7%94%A8-yum-%E7%9A%84-localinstall-%E9%80%89%E9%A1%B9-%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85rpm/"
+           data-tag="安装"
+           data-author="" >
+            <span class="post-title" title="yum-localinstall-使用 yum 的 localinstall 选项-本地安装rpm">yum-localinstall-使用 yum 的 localinstall 选项-本地安装rpm</span>
+            <span class="post-date" title="2025-08-20 15:49:42">2025/08/20</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/08/25/2508/250808-MongoDBHA-MongoDB%E5%89%AF%E6%9C%AC%E9%9B%86rs-initiate-%E4%B8%89%E4%B8%AA%E5%89%AF%E6%9C%AC%E9%9B%86%E8%8A%82%E7%82%B9%E9%83%BD%E6%89%A7%E8%A1%8C%E4%BA%86%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E/"
+           data-tag="MongoDB"
+           data-author="" >
+            <span class="post-title" title="250808-MongoDBHA-MongoDB副本集rs.initiate() 三个副本集节点都执行了，怎么办">250808-MongoDBHA-MongoDB副本集rs.initiate() 三个副本集节点都执行了，怎么办</span>
+            <span class="post-date" title="2025-08-08 13:34:12">2025/08/08</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/05/25/2508/250805-Ubuntu20.04%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE%E8%84%9A%E6%9C%AC-Ubuntu-Scripts/"
+           data-tag="配置,Ubuntu,优化"
+           data-author="" >
+            <span class="post-title" title="250805-Ubuntu20.04优化配置脚本-Ubuntu-Scripts">250805-Ubuntu20.04优化配置脚本-Ubuntu-Scripts</span>
+            <span class="post-date" title="2025-08-05 13:16:41">2025/08/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/05/25/2508/250805-Windows-%E5%8F%B0%E5%BC%8F%E6%9C%BA%E8%BF%9E%E6%8E%A5%E7%AC%94%E8%AE%B0%E6%9C%AC%E4%B8%8A%E7%BD%91-%E5%8F%B0%E5%BC%8F%E6%9C%BA%E8%81%94%E7%BD%91/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="250805-(Windows)台式机连接笔记本上网-台式机联网">250805-(Windows)台式机连接笔记本上网-台式机联网</span>
+            <span class="post-date" title="2025-08-05 12:58:15">2025/08/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/04/25/2508/250805-Docker-Images%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85/"
+           data-tag="配置,离线安装,Docker"
+           data-author="" >
+            <span class="post-title" title="250805-Docker Images离线打包">250805-Docker Images离线打包</span>
+            <span class="post-date" title="2025-08-05 00:00:00">2025/08/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/02/25/2508/250801-Maven-T-1C%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/"
+           data-tag="配置,Java"
+           data-author="" >
+            <span class="post-title" title="250801-Maven-T-1C多线程编译参数配置">250801-Maven-T-1C多线程编译参数配置</span>
+            <span class="post-date" title="2025-08-02 17:07:28">2025/08/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/08/01/25/2508/250801-(%E8%BD%AC%E8%BD%BD)%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E6%B5%81%E7%A8%8B%E5%9B%BE/"
+           data-tag="转载,流程图"
+           data-author="" >
+            <span class="post-title" title="2508-(转载)项目管理流程图">2508-(转载)项目管理流程图</span>
+            <span class="post-date" title="2025-08-02 00:00:00">2025/08/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/31/25/2507/250730-ubuntu%E7%A3%81%E7%9B%98%E6%96%87%E4%BB%B6%E9%94%99%E8%AF%AF-ubuntu-initramfs-%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F/"
+           data-tag="排障,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250730-ubuntu磁盘文件错误-ubuntu-initramfs 的命令行模式">250730-ubuntu磁盘文件错误-ubuntu-initramfs 的命令行模式</span>
+            <span class="post-date" title="2025-07-31 14:13:13">2025/07/31</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-%E7%AC%94%E8%AE%B0%E7%A5%9E%E5%99%A8Markdown%E4%B9%8B%E5%AE%8C%E7%BE%8E%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%BA%8A%EF%BC%88Typora-PicGo-Github%EF%BC%89/"
+           data-tag="GitHub"
+           data-author="" >
+            <span class="post-title" title="250728-笔记神器Markdown之完美实现图床（Typora+PicGo+Github）">250728-笔记神器Markdown之完美实现图床（Typora+PicGo+Github）</span>
+            <span class="post-date" title="2025-07-28 18:39:50">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-ubuntu20.04-chrome-kanban-%E7%9C%8B%E6%9D%BF%E5%85%A8%E5%B1%8F%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/"
+           data-tag="配置,Chrome,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250728-ubuntu20.04-chrome-kanban-看板全屏参数配置">250728-ubuntu20.04-chrome-kanban-看板全屏参数配置</span>
+            <span class="post-date" title="2025-07-28 18:08:41">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-ubuntu20-04%E5%AE%89%E8%A3%85chrome-%E5%90%8E%EF%BC%8C%E6%8F%90%E7%A4%BA%E5%AF%86%E9%92%A5-%E9%80%9A%E8%BF%87ssh%E8%AE%BF%E9%97%AE-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3/"
+           data-tag="Chrome,Linux,安装,Ubuntu,SSH"
+           data-author="" >
+            <span class="post-title" title="250728-ubuntu20.04安装chrome 后，提示密钥 通过ssh访问 如何解决">250728-ubuntu20.04安装chrome 后，提示密钥 通过ssh访问 如何解决</span>
+            <span class="post-date" title="2025-07-28 18:03:50">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-ubuntu20-04-%E5%A6%82%E4%BD%95%E7%94%A8%E9%BB%98%E8%AE%A4%E7%9A%84%E8%B4%A6%E5%8F%B7-%E5%BC%80%E5%90%AFrdp%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/"
+           data-tag="配置,Windows,Ubuntu,远程桌面"
+           data-author="" >
+            <span class="post-title" title="250728-ubuntu20.04 如何用默认的账号 开启rdp远程访问">250728-ubuntu20.04 如何用默认的账号 开启rdp远程访问</span>
+            <span class="post-date" title="2025-07-28 17:26:16">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-docker-run%E4%B8%80%E6%AC%A1%E6%80%A7%E8%BF%90%E8%A1%8C%E7%9A%84%20Docker%20%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4-docker%E8%BF%90%E8%A1%8CImages-%E8%BF%90%E8%A1%8C%E5%90%8E%E9%94%80%E6%AF%81/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="250728-docker-run一次性运行的 Docker 容器命令-docker运行Images-运行后销毁">250728-docker-run一次性运行的 Docker 容器命令-docker运行Images-运行后销毁</span>
+            <span class="post-date" title="2025-07-28 16:52:39">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/28/25/2507/250728-Docker-desktop%E4%B8%AD%E6%96%87%E8%AE%BE%E7%BD%AE/"
+           data-tag="配置,Docker"
+           data-author="" >
+            <span class="post-title" title="250728-Docker desktop中文设置">250728-Docker desktop中文设置</span>
+            <span class="post-date" title="2025-07-28 13:16:16">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/27/25/2507/250728-Nmap-%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%EF%BC%88%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91%EF%BC%89/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="250728-Nmap 使用帮助（中文翻译）">250728-Nmap 使用帮助（中文翻译）</span>
+            <span class="post-date" title="2025-07-28 00:00:00">2025/07/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/24/25/2507/250724-Ubuntu-24-04%E3%80%8123-04%E3%80%8122-04%E3%80%8120-04%E3%80%8118-04%E5%9B%BD%E5%86%85%E6%BA%90-%E9%98%BF%E9%87%8C%E4%BA%91%E3%80%81%E4%B8%AD%E7%A7%91%E5%A4%A7%E3%80%81163%E3%80%81%E6%B8%85%E5%8D%8E%E6%9B%B4%E6%96%B0%E6%BA%90%EF%BC%88sources-list%EF%BC%89/"
+           data-tag="Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250724-Ubuntu 24.04、23.04、22.04、20.04、18.04国内源--阿里云、中科大、163、清华更新源（sources.list）">250724-Ubuntu 24.04、23.04、22.04、20.04、18.04国内源--阿里云、中科大、163、清华更新源（sources.list）</span>
+            <span class="post-date" title="2025-07-24 17:51:24">2025/07/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/24/25/2507/250724-Ubuntu20-04%E6%A1%8C%E9%9D%A2%E7%89%88%E7%B3%BB%E7%BB%9F-%E9%85%8D%E7%BD%AE%E7%9C%8B%E6%9D%BF-%E7%95%8C%E9%9D%A2%E5%8A%9F%E8%83%BD%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/"
+           data-tag="配置,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250724-Ubuntu20.04桌面版系统-配置看板-界面功能参数配置">250724-Ubuntu20.04桌面版系统-配置看板-界面功能参数配置</span>
+            <span class="post-date" title="2025-07-24 16:38:24">2025/07/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/24/25/2507/250724-Idea-%E6%96%87%E4%BB%B6%E5%A4%B9%E9%9A%90%E8%97%8F-Idea-File-Ignore/"
+           data-tag="IDEA"
+           data-author="" >
+            <span class="post-title" title="Idea-文件夹隐藏-Idea File Ignore">Idea-文件夹隐藏-Idea File Ignore</span>
+            <span class="post-date" title="2025-07-24 10:20:03">2025/07/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/23/25/2507/250724-Ubuntu-Linux-netplan-ifconfig%E7%BD%91%E5%8D%A1%E5%90%8D%E5%AD%97%E8%B0%83%E6%95%B4/"
+           data-tag="配置,Linux,Ubuntu,网络配置"
+           data-author="" >
+            <span class="post-title" title="250724-Ubuntu-Linux-netplan-ifconfig网卡名字调整">250724-Ubuntu-Linux-netplan-ifconfig网卡名字调整</span>
+            <span class="post-date" title="2025-07-24 00:00:00">2025/07/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/23/25/2507/250723-Linux-%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-%E7%A6%81%E7%94%A8%E5%86%85%E6%A0%B8%E6%9B%B4%E6%96%B0-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%AE%9A%E5%86%85%E6%A0%B8%E5%90%AF%E5%8A%A8/"
+           data-tag="配置,Linux"
+           data-author="" >
+            <span class="post-title" title="250723-Linux-内核更新-禁用内核更新-配置指定内核启动">250723-Linux-内核更新-禁用内核更新-配置指定内核启动</span>
+            <span class="post-date" title="2025-07-23 17:33:14">2025/07/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/23/25/2507/250723-ubuntu-Linux-wget%E4%B8%8B%E8%BD%BD%E8%BF%90%E8%A1%8Cbash%E8%84%9A%E6%9C%AC-wgetBox-wget%E7%9B%92%E5%AD%90/"
+           data-tag="Linux,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250723-ubuntu-Linux-wget下载运行bash脚本-wgetBox-wget盒子">250723-ubuntu-Linux-wget下载运行bash脚本-wgetBox-wget盒子</span>
+            <span class="post-date" title="2025-07-23 15:40:04">2025/07/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/23/25/2507/250723-ubuntu-Linux-wget%E4%B8%8B%E8%BD%BD%E8%BF%90%E8%A1%8Cbash%E8%84%9A%E6%9C%AC/"
+           data-tag="Linux,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250723-ubuntu-Linux wget下载运行bash脚本">250723-ubuntu-Linux wget下载运行bash脚本</span>
+            <span class="post-date" title="2025-07-23 15:40:04">2025/07/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/22/25/2507/250722-Git-LF-will-be-replaced-by-CRLF-the-next-time-Git-touches-it%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag="排障,Git"
+           data-author="" >
+            <span class="post-title" title="250722-Git-LF will be replaced by CRLF the next time Git touches it问题解决">250722-Git-LF will be replaced by CRLF the next time Git touches it问题解决</span>
+            <span class="post-date" title="2025-07-22 20:56:56">2025/07/22</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/22/25/2507/250722-ChromePlugins-%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6-ChromeReloadPlus-%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0%E6%8F%92%E4%BB%B6-%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6%E4%B8%8E%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6/"
+           data-tag="配置,Chrome,安装"
+           data-author="" >
+            <span class="post-title" title="250722-ChromePlugins-谷歌插件-ChromeReloadPlus-自动刷新插件-打包插件与安装打包插件">250722-ChromePlugins-谷歌插件-ChromeReloadPlus-自动刷新插件-打包插件与安装打包插件</span>
+            <span class="post-date" title="2025-07-22 17:27:29">2025/07/22</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/22/25/2507/250722-Git%E4%BB%A3%E7%A0%81%E5%BA%93%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%AC%E5%91%BD%E4%BB%A4-git-%E4%BB%93%E5%BA%93%E8%BF%81%E7%A7%BB-git-clone-mirror-git-push-mirror/"
+           data-tag="配置,Git"
+           data-author="" >
+            <span class="post-title" title="250722-Git代码库迁移脚本命令(git 仓库迁移 git clone --mirror git push --mirror)">250722-Git代码库迁移脚本命令(git 仓库迁移 git clone --mirror git push --mirror)</span>
+            <span class="post-date" title="2025-07-22 15:56:50">2025/07/22</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/18/25/2507/250718-Ubuntu%E5%AE%89%E8%A3%85FTP%E6%9C%8D%E5%8A%A1vsftpd/"
+           data-tag="安装,Ubuntu,FTP"
+           data-author="" >
+            <span class="post-title" title="250718-Ubuntu安装FTP服务vsftpd">250718-Ubuntu安装FTP服务vsftpd</span>
+            <span class="post-date" title="2025-07-18 14:05:14">2025/07/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/16/25/2507/250716-libreoffice-ubuntu%E5%AE%89%E8%A3%85%E5%90%8E%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Foffice/"
+           data-tag="配置,安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="250716-libreoffice-ubuntu安装后配置环境变量office">250716-libreoffice-ubuntu安装后配置环境变量office</span>
+            <span class="post-date" title="2025-07-16 17:41:04">2025/07/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/15/25/2507/250715-virtualbox%EF%BF%BD%EF%BF%BD-ubuntu-lsblk-lvmiU%EF%BF%BD%09%06:(100%25)/"
+           data-tag="Ubuntu,VirtualBox"
+           data-author="" >
+            <span class="post-title" title="250715-virtualbox磁盘-ubuntu-lsblk-lvm扩展已有分区(100%)">250715-virtualbox磁盘-ubuntu-lsblk-lvm扩展已有分区(100%)</span>
+            <span class="post-date" title="2025-07-15 17:32:03">2025/07/15</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/10/25/2507/250711-LinuxBox%E5%AE%89%E8%A3%85Chrome%E6%8F%90%E7%A4%BA-Aw-Snap-Something-went-wrong-while-displaying-this-webpage-Error-codeRESULT-CODE-INVALID-SANDBOX-STATE/"
+           data-tag="Chrome,安装"
+           data-author="" >
+            <span class="post-title" title="250711-LinuxBox安装Chrome提示:Aw,Snap! Something went wrong while displaying this webpage. Error codeRESULT CODE_INVALID_SANDBOX_STATE">250711-LinuxBox安装Chrome提示:Aw,Snap! Something went wrong while displaying this webpage. Error codeRESULT CODE_INVALID_SANDBOX_STATE</span>
+            <span class="post-date" title="2025-07-11 00:00:00">2025/07/11</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/07/06/25/2507/250706-VirtualBox%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE1920x1080%E5%88%86%E8%BE%A8%E7%8E%87/"
+           data-tag="配置,VirtualBox"
+           data-author="" >
+            <span class="post-title" title="250706-VirtualBox如何设置1920x1080分辨率">250706-VirtualBox如何设置1920x1080分辨率</span>
+            <span class="post-date" title="2025-07-06 14:57:51">2025/07/06</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/28/25/2505/250401-VirtualBox-Extension-Pack%E6%89%A9%E5%B1%95%E5%8C%85-%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4/"
+           data-tag="VirtualBox"
+           data-author="" >
+            <span class="post-title" title="VirtualBox Extension Pack扩展包-调用摄像头">VirtualBox Extension Pack扩展包-调用摄像头</span>
+            <span class="post-date" title="2025-06-28 20:08:28">2025/06/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/18/25/2505/250401-Windows10-MSTSC-%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E5%B9%B6%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7/"
+           data-tag="配置,Windows,远程桌面,远程连接"
+           data-author="" >
+            <span class="post-title" title="Windows10 开启远程桌面并添加用户">Windows10 开启远程桌面并添加用户</span>
+            <span class="post-date" title="2025-06-18 16:49:42">2025/06/18</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/17/25/2505/250401-%E3%80%90WINDOWS10-%E5%8D%B8%E8%BD%BD%E3%80%91%E5%AE%89%E5%85%A8%E8%A1%A5%E4%B8%81%E5%8F%B3%E9%94%AE%E4%B8%8D%E8%83%BD%E5%8D%B8%E8%BD%BD%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="【WINDOWS10 卸载】安全补丁右键不能卸载处理方法">【WINDOWS10 卸载】安全补丁右键不能卸载处理方法</span>
+            <span class="post-date" title="2025-06-17 13:42:25">2025/06/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPC-DA-ALL-List-OPC-5%E4%BA%94-OPC-Client-Java%E8%B0%83%E7%94%A8%E4%B9%8BJeasyOPC/"
+           data-tag="Java,OPC"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-OPC-(五)-OPC Client Java调用之JeasyOPC">OPC-DA-ALL-List-OPC-(五)-OPC Client Java调用之JeasyOPC</span>
+            <span class="post-date" title="2025-06-16 16:12:28">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPC-DA-ALL-List-OPC-4%E5%9B%9B-OPC-Client-Java%E8%B0%83%E7%94%A8%E4%B9%8BUtgard/"
+           data-tag="Java,OPC,DCOM"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-OPC-(四)-OPC Client Java调用之Utgard">OPC-DA-ALL-List-OPC-(四)-OPC Client Java调用之Utgard</span>
+            <span class="post-date" title="2025-06-16 16:12:19">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPC-DA-ALL-List-OPC-3%E4%B8%89-OPC%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD/"
+           data-tag="OPC"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-OPC-(三)-OPC主要功能">OPC-DA-ALL-List-OPC-(三)-OPC主要功能</span>
+            <span class="post-date" title="2025-06-16 16:12:09">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPC-DA-ALL-List-OPC-2%E4%BA%8C-%E4%BB%80%E4%B9%88%E6%98%AFOPC/"
+           data-tag="OPC"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-OPC-(二)-什么是OPC">OPC-DA-ALL-List-OPC-(二)-什么是OPC</span>
+            <span class="post-date" title="2025-06-16 16:12:00">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPC-DA-ALL-List-OPC-0(Utgard&JeasyOPC)-%E8%BD%AC%E8%BD%BD/"
+           data-tag="Java,OPC,转载"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-转载">OPC-DA-ALL-List-转载</span>
+            <span class="post-date" title="2025-06-16 16:05:52">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPCDA-opc-ua-opc-da%E5%B8%B8%E7%94%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7-%E8%BD%AC%E8%BD%BD/"
+           data-tag="OPC,转载"
+           data-author="" >
+            <span class="post-title" title="opc ua/opc da常用客户端测试工具-转载">opc ua/opc da常用客户端测试工具-转载</span>
+            <span class="post-date" title="2025-06-16 15:31:45">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPCDA-Windows2016%E9%85%8D%E7%BD%AEOPC-DA-DCOM%E9%80%9A%E4%BF%A1-%E8%BD%AC%E8%BD%BD/"
+           data-tag="配置,OPC,转载,DCOM,Windows"
+           data-author="" >
+            <span class="post-title" title="Windows2016配置OPC DA DCOM通信-转载">Windows2016配置OPC DA DCOM通信-转载</span>
+            <span class="post-date" title="2025-06-16 15:30:42">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPCDA-Siemens-wincc-opc-da-%E6%95%B0%E6%8D%AE%E6%96%AD%E6%B5%81%E9%97%AE%E9%A2%98%E6%8E%A2%E7%B4%A2-%E8%BD%AC%E8%BD%BD/"
+           data-tag="排障,OPC,转载,WinCC,西门子"
+           data-author="" >
+            <span class="post-title" title="Siemens wincc opc da 数据断流问题探索-转载">Siemens wincc opc da 数据断流问题探索-转载</span>
+            <span class="post-date" title="2025-06-16 15:29:34">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/16/25/2505/250401-OPCDA-OPC%E7%9A%84DCOM%E9%85%8D%E7%BD%AE-%E8%BD%AC%E8%BD%BD/"
+           data-tag="配置,OPC,转载,DCOM"
+           data-author="" >
+            <span class="post-title" title="OPC的DCOM配置-转载">OPC的DCOM配置-转载</span>
+            <span class="post-date" title="2025-06-16 15:28:41">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/15/25/2505/250401-OPC-DA-ALL-List-OPC-1%E4%B8%80-%E5%AE%89%E8%A3%85Matrikon-OPC-Simulation-Server/"
+           data-tag="安装,OPC"
+           data-author="" >
+            <span class="post-title" title="OPC-DA-ALL-List-OPC-(一)-安装Matrikon OPC Simulation Server">OPC-DA-ALL-List-OPC-(一)-安装Matrikon OPC Simulation Server</span>
+            <span class="post-date" title="2025-06-16 00:00:00">2025/06/16</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/13/25/2505/250401-%E5%9C%A8Win11%E4%B8%8A%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-NET-Framework-3-5%E7%9A%84%E6%96%B9%E6%B3%95/"
+           data-tag="安装,离线安装,Windows"
+           data-author="" >
+            <span class="post-title" title="在Win11上离线安装 .NET Framework 3.5的方法">在Win11上离线安装 .NET Framework 3.5的方法</span>
+            <span class="post-date" title="2025-06-13 16:05:13">2025/06/13</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/13/25/2505/250401-Windows%E5%AE%89%E8%A3%85SSH-Win32-OpenSSH/"
+           data-tag="Linux,安装,Windows,SSH"
+           data-author="" >
+            <span class="post-title" title="Windows安装SSH-Win32-OpenSSH">Windows安装SSH-Win32-OpenSSH</span>
+            <span class="post-date" title="2025-06-13 09:40:03">2025/06/13</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/12/25/2505/250401-ARMBoxLinuxBox%E7%9B%92%E5%AD%90%E5%B7%A5%E6%8E%A7%E6%9C%BA/"
+           data-tag="Chrome,设备配置"
+           data-author="" >
+            <span class="post-title" title="ARMBoxLinuxBox盒子工控机">ARMBoxLinuxBox盒子工控机</span>
+            <span class="post-date" title="2025-06-12 20:43:19">2025/06/12</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/10/25/2505/250401-Ubuntu%E7%B3%BB%E7%BB%9F%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8E%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95ToDoList/"
+           data-tag="配置,安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="Ubuntu系统初始化后配置清单ToDoList">Ubuntu系统初始化后配置清单ToDoList</span>
+            <span class="post-date" title="2025-06-10 16:30:33">2025/06/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/06/25/2505/250401-Ubuntu-Date-CST-UTC%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%80%E5%A5%BD%E6%96%B9%E6%B3%95-timedatectl-set-timezone-Asia-Shanghai/"
+           data-tag="配置,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="Ubuntu Date-CST-UTC &gt; CST修改时区时间的最好方法 timedatectl set-timezone Asia/Shanghai">Ubuntu Date-CST-UTC &gt; CST修改时区时间的最好方法 timedatectl set-timezone Asia/Shanghai</span>
+            <span class="post-date" title="2025-06-06 09:22:41">2025/06/06</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/04/25/2506/250605-AngularJS-Button%E9%98%B2%E6%AD%A2%E9%87%8D%E5%A4%8D%E7%82%B9%E5%87%BB%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"
+           data-tag="AngularJS"
+           data-author="" >
+            <span class="post-title" title="250605-AngularJS-Button防止重复点击解决办法">250605-AngularJS-Button防止重复点击解决办法</span>
+            <span class="post-date" title="2025-06-05 00:00:00">2025/06/05</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/04/25/2505/250401-Ubuntu-%E6%80%A7%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/"
+           data-tag="配置,Ubuntu,优化"
+           data-author="" >
+            <span class="post-title" title="Ubuntu-性能服务器参数优化">Ubuntu-性能服务器参数优化</span>
+            <span class="post-date" title="2025-06-04 16:30:02">2025/06/04</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/03/25/2505/250401-Linux-Too-many-open-files-%E5%BC%82%E5%B8%B8%E8%A7%A3%E5%86%B3/"
+           data-tag="排障,Linux"
+           data-author="" >
+            <span class="post-title" title="Linux Too many open files 异常解决">Linux Too many open files 异常解决</span>
+            <span class="post-date" title="2025-06-04 00:00:00">2025/06/04</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-%E7%B3%BB%E7%BB%9F%E5%90%AF%E7%94%A8%E4%BA%86-SELinux-%E6%88%96-AppArmor%EF%BC%8C%E9%99%90%E5%88%B6-MongoDB-%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E3%80%82%E5%AF%BC%E8%87%B4%E6%9C%8D%E5%8A%A1-mongod-service-%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"
+           data-tag="排障,Linux,MongoDB"
+           data-author="" >
+            <span class="post-title" title="系统启用了 SELinux 或 AppArmor，限制 MongoDB 的访问权限。导致服务 mongod.service 启动失败">系统启用了 SELinux 或 AppArmor，限制 MongoDB 的访问权限。导致服务 mongod.service 启动失败</span>
+            <span class="post-date" title="2025-06-02 17:34:35">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-ubuntu-LANG=zh_CN.UTF-8%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"
+           data-tag="排障,安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="ubuntu-LANG=zh_CN.UTF-8中文乱码问题解决">ubuntu-LANG=zh_CN.UTF-8中文乱码问题解决</span>
+            <span class="post-date" title="2025-06-02 16:19:19">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-CPU-arm-vs-AArch64-vs-amd64-vs-x86-64-vs-x86/"
+           data-tag="CPU架构"
+           data-author="" >
+            <span class="post-title" title="(CPU)arm vs AArch64 vs amd64 vs x86_64 vs x86">(CPU)arm vs AArch64 vs amd64 vs x86_64 vs x86</span>
+            <span class="post-date" title="2025-06-02 15:53:14">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-CPU%E8%8A%AF%E7%89%87%E6%9E%B6%E6%9E%84%EF%BC%88X86%E3%80%81ARM%E3%80%81RISC-V%E5%92%8CMIPS%EF%BC%89/"
+           data-tag="CPU架构"
+           data-author="" >
+            <span class="post-title" title="CPU芯片架构（X86、ARM、RISC-V和MIPS）">CPU芯片架构（X86、ARM、RISC-V和MIPS）</span>
+            <span class="post-date" title="2025-06-02 15:45:10">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-OPC-DA-OPC%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86DCOM%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/"
+           data-tag="配置,OPC,转载,DCOM"
+           data-author="" >
+            <span class="post-title" title="OPC数据采集DCOM配置指南-转载">OPC数据采集DCOM配置指南-转载</span>
+            <span class="post-date" title="2025-06-02 15:33:38">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2505/250401-OPC-DA-README/"
+           data-tag="配置,排障,OPC,DCOM"
+           data-author="" >
+            <span class="post-title" title="OPC数据采集DCOM配置-问题解决">OPC数据采集DCOM配置-问题解决</span>
+            <span class="post-date" title="2025-06-02 15:33:38">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/06/02/25/2506/250602-(Chrome%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8)Chrome-Ubuntu-20-04-%E4%B8%8A%E5%AE%89%E8%A3%85-Google-Chrome-%E7%BD%91%E7%BB%9C%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="Chrome,安装,Ubuntu"
+           data-author="" >
+            <span class="post-title" title="(Chrome开机自启动)Ubuntu 20.04 上安装 Google Chrome 网络浏览器">(Chrome开机自启动)Ubuntu 20.04 上安装 Google Chrome 网络浏览器</span>
+            <span class="post-date" title="2025-06-02 15:33:38">2025/06/02</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/30/25/2505/250401-MongoDB%E5%AE%89%E8%A3%85%E5%90%8Emongod-service%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5-SELinux%E6%88%96AppArmor%E9%99%90%E5%88%B6/"
+           data-tag="排障,Linux,MongoDB,安装"
+           data-author="" >
+            <span class="post-title" title="MongoDB安装后mongod.service启动失败(SELinux或AppArmor限制)">MongoDB安装后mongod.service启动失败(SELinux或AppArmor限制)</span>
+            <span class="post-date" title="2025-05-30 22:35:13">2025/05/30</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/30/25/2505/250401-win11%E4%B8%93%E4%B8%9A%E7%89%88%E6%BF%80%E6%B4%BB%E5%AF%86%E9%92%A5/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="win11专业版激活密钥">win11专业版激活密钥</span>
+            <span class="post-date" title="2025-05-30 14:28:24">2025/05/30</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/30/25/2505/250401-Git-Tag%E6%89%93%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD/"
+           data-tag="工具使用,Git"
+           data-author="" >
+            <span class="post-title" title="Git Tag打标签功能">Git Tag打标签功能</span>
+            <span class="post-date" title="2025-05-30 12:03:35">2025/05/30</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/28/25/2505/250401-MongoDB%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/"
+           data-tag="MongoDB,安装,离线安装"
+           data-author="" >
+            <span class="post-title" title="MongoDB离线安装流程">MongoDB离线安装流程</span>
+            <span class="post-date" title="2025-05-28 16:03:07">2025/05/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/27/25/2505/250401-MongoDB-Auth%E5%88%9B%E5%BB%BA%E8%B4%A6%E5%8F%B7%E5%92%8C%E6%9D%83%E9%99%90/"
+           data-tag="配置,MongoDB"
+           data-author="" >
+            <span class="post-title" title="MongoDB Auth创建账号和权限">MongoDB Auth创建账号和权限</span>
+            <span class="post-date" title="2025-05-28 00:00:00">2025/05/28</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/27/25/2505/250401-Ubuntu%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%BB%98%E8%AE%A4Limit%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/"
+           data-tag="配置,Ubuntu,优化"
+           data-author="" >
+            <span class="post-title" title="Ubuntu配置系统默认Limit参数优化">Ubuntu配置系统默认Limit参数优化</span>
+            <span class="post-date" title="2025-05-27 09:57:38">2025/05/27</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/26/25/2505/250401-KEPServerEX%20IotGateWay%E9%85%8D%E7%BD%AEModbus%E9%87%87%E9%9B%86%E5%B9%B6%E5%8F%91%E9%80%81MQTTClient%E6%B6%88%E6%81%AF/"
+           data-tag="配置,KEPServerEX,Modbus,MQTT"
+           data-author="" >
+            <span class="post-title" title="KEPServerEX IotGateWay配置Modbus采集并发送MQTTClient消息">KEPServerEX IotGateWay配置Modbus采集并发送MQTTClient消息</span>
+            <span class="post-date" title="2025-05-26 20:35:55">2025/05/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/26/25/2505/250401-KepEX6-V6.8%E6%97%B6%E9%97%B4%E9%99%90%E5%88%B6%E7%A0%B4%E8%A7%A3/"
+           data-tag="KEPServerEX,排障"
+           data-author="" >
+            <span class="post-title" title="KepEX6 V6.8时间限制破解">KepEX6 V6.8时间限制破解</span>
+            <span class="post-date" title="2025-05-26 18:10:31">2025/05/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/26/25/2505/250401-MongoDBHA-MongoDB%E9%9B%86%E7%BE%A4-(Replica%20Set)%E5%89%AF%E6%9C%AC%E9%9B%86%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"
+           data-tag="MongoDB,安装,副本集"
+           data-author="" >
+            <span class="post-title" title="M250401-MongoDBHA-MongoDB集群-(Replica Set)副本集集群搭建">M250401-MongoDBHA-MongoDB集群-(Replica Set)副本集集群搭建</span>
+            <span class="post-date" title="2025-05-26 16:10:40">2025/05/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/26/25/2505/250401-Windows-%E4%B8%8B%E8%BD%BD%E6%B1%87%E6%80%BB-Windows-Windows-Server2008-%E7%AD%89/"
+           data-tag="Windows"
+           data-author="" >
+            <span class="post-title" title="Windows 下载汇总(Windows/Windows Server2008)等">Windows 下载汇总(Windows/Windows Server2008)等</span>
+            <span class="post-date" title="2025-05-26 15:27:31">2025/05/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/25/25/2505/250401-WindowsDefender%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E6%8E%92%E9%99%A4%E9%A1%B9-%E8%A7%A3%E5%86%B3%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1MongoDB%E8%A2%AB%E6%89%AB%E6%8F%8F%E5%81%9C%E6%AD%A2%E9%97%AE%E9%A2%98/"
+           data-tag="排障,MongoDB,Windows"
+           data-author="" >
+            <span class="post-title" title="WindowsDefender添加文件夹排除项(解决系统服务MongoDB被扫描停止问题)">WindowsDefender添加文件夹排除项(解决系统服务MongoDB被扫描停止问题)</span>
+            <span class="post-date" title="2025-05-26 00:00:00">2025/05/26</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/24/25/2505/250401-MongoDB%E5%B9%B3%E5%8F%B0%E6%94%AF%E6%8C%81%E5%AE%89%E8%A3%85%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC/"
+           data-tag="MongoDB,安装"
+           data-author="" >
+            <span class="post-title" title="MongoDB平台支持安装的操作系统版本">MongoDB平台支持安装的操作系统版本</span>
+            <span class="post-date" title="2025-05-24 15:17:08">2025/05/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/24/25/2507/250722-Windows%E7%94%A8%E6%88%B7-Windows%E8%A3%85%E6%9C%BA-VirtualBOX-%E6%9C%80%E6%96%B0Win11-24H2%E7%B3%BB%E7%BB%9F%E8%B7%B3%E8%BF%87%E8%81%94%E7%BD%91%E6%BF%80%E6%B4%BB%EF%BC%8C%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E8%B4%A6%E6%88%B7%E6%95%99%E7%A8%8B/"
+           data-tag="配置,Windows,VirtualBox"
+           data-author="" >
+            <span class="post-title" title="Windows用户-最新-VirtualBOX-Win11 24H2系统跳过联网激活，快速创建本地账户教程">Windows用户-最新-VirtualBOX-Win11 24H2系统跳过联网激活，快速创建本地账户教程</span>
+            <span class="post-date" title="2025-05-24 14:25:16">2025/05/24</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/22/25/2505/250401-Windows%E5%85%B3%E9%97%AD%E5%86%85%E6%A0%B8%E9%9A%94%E7%A6%BB-%E5%86%85%E6%A0%B8%E9%9A%94%E7%A6%BB-AVX%E6%8C%87%E4%BB%A4%E9%9B%86/"
+           data-tag="配置,Windows"
+           data-author="" >
+            <span class="post-title" title="Windows关闭内核隔离-(内核隔离)AVX指令集">Windows关闭内核隔离-(内核隔离)AVX指令集</span>
+            <span class="post-date" title="2025-05-23 00:00:00">2025/05/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/22/25/2505/250401-Windows%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B2%A1%E6%9C%89AVX%E6%8C%87%E4%BB%A4%E9%9B%86%E5%AF%BC%E8%87%B4%E5%AE%89%E8%A3%85MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%B1%E8%B4%A5(Windows%E7%A6%81%E7%94%A8%E5%86%85%E6%A0%B8%E9%9A%94%E7%A6%BB%E6%9C%BA%E5%88%B6)/"
+           data-tag="配置,排障,MongoDB,安装,Windows"
+           data-author="" >
+            <span class="post-title" title="Windows关闭内核隔离-(内核隔离)AVX指令集">Windows关闭内核隔离-(内核隔离)AVX指令集</span>
+            <span class="post-date" title="2025-05-23 00:00:00">2025/05/23</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/19/25/2505/250401-%E5%8F%8D%E6%80%9D250519/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="反思250519">反思250519</span>
+            <span class="post-date" title="2025-05-19 20:34:02">2025/05/19</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/17/25/2505/250401-GithubToken%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E5%92%8C%E4%BD%BF%E7%94%A8/"
+           data-tag="GitHub,Token"
+           data-author="" >
+            <span class="post-title" title="GithubToken如何生成和使用">GithubToken如何生成和使用</span>
+            <span class="post-date" title="2025-05-17 16:27:20">2025/05/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/17/25/2505/250401-Github-Action%E5%AE%9E%E7%8E%B0Blog%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83/"
+           data-tag="GitHub,GitHub Actions,GitHub Pages,Hexo"
+           data-author="" >
+            <span class="post-title" title="Github Action实现Blog自动发布">Github Action实现Blog自动发布</span>
+            <span class="post-date" title="2025-05-17 14:37:31">2025/05/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/16/25/2505/250401-frp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F-Windows%E7%89%88%E6%9C%AC/"
+           data-tag="Windows,FRP,内网穿透"
+           data-author="" >
+            <span class="post-title" title="frp实现内网穿透(Windows版本)">frp实现内网穿透(Windows版本)</span>
+            <span class="post-date" title="2025-05-17 00:00:00">2025/05/17</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/10/25/2505/250401-github%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7Token/"
+           data-tag="配置,GitHub,Token"
+           data-author="" >
+            <span class="post-title" title="github如何创建用户Token">github如何创建用户Token</span>
+            <span class="post-date" title="2025-05-10 19:02:20">2025/05/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/10/25/2505/250401-%E7%A8%8B%E5%BA%8F%E5%91%98%E5%A6%82%E4%BD%95%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE/"
+           data-tag="流程图"
+           data-author="" >
+            <span class="post-title" title="程序员如何画流程图">程序员如何画流程图</span>
+            <span class="post-date" title="2025-05-10 18:38:18">2025/05/10</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/05/06/25/2505/250401-%E6%8A%A5%E8%80%83%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88250506/"
+           data-tag="笔记"
+           data-author="" >
+            <span class="post-title" title="报考软件设计师250506">报考软件设计师250506</span>
+            <span class="post-date" title="2025-05-06 18:06:33">2025/05/06</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-25/2510/251011-Ubuntu升级SSH-Ubuntu20-22-24通过deb软件包方式升级openssh到9-9的方法" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">251011-Ubuntu升级SSH-Ubuntu20/22/24通过deb软件包方式升级openssh到9.9的方法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">Linux</a>
+            
+            <a class="color3">安装</a>
+            
+            <a class="color2">Ubuntu</a>
+            
+            <a class="color4">SSH</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2026-09-04 15:34:15'>2025-10-11 00:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSH-%E7%89%88%E6%9C%AC%E4%BB%93%E5%BA%93"><span class="toc-text">SSH 版本仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu20-22-24%E9%80%9A%E8%BF%87deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%96%B9%E5%BC%8F%E5%8D%87%E7%BA%A7openssh%E5%88%B09-9%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82"><span class="toc-text">Ubuntu20&#x2F;22&#x2F;24通过deb软件包方式升级openssh到9.9的方法。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenSSH9-9%EF%BC%9A"><span class="toc-text">OpenSSH9.9：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E5%89%8D%E5%BF%85%E7%9C%8B"><span class="toc-text">升级前必看</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SSH-版本仓库"><a href="#SSH-版本仓库" class="headerlink" title="SSH 版本仓库"></a>SSH 版本仓库</h2><p><a target="_blank" rel="noopener" href="https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/">https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/</a></p>
+<h2 id="Ubuntu20-22-24通过deb软件包方式升级openssh到9-9的方法。"><a href="#Ubuntu20-22-24通过deb软件包方式升级openssh到9-9的方法。" class="headerlink" title="Ubuntu20&#x2F;22&#x2F;24通过deb软件包方式升级openssh到9.9的方法。"></a>Ubuntu20&#x2F;22&#x2F;24通过deb软件包方式升级openssh到9.9的方法。</h2><h3 id="OpenSSH9-9："><a href="#OpenSSH9-9：" class="headerlink" title="OpenSSH9.9："></a><strong>OpenSSH9.9：</strong></h3><p><a target="_blank" rel="noopener" href="https://down.tag.gg/Openssh/deb/">https://down.tag.gg/Openssh/deb/</a></p>
+<p>1、备份原来ssh配置文件：</p>
+<blockquote>
+<p>cp -rp &#x2F;etc&#x2F;ssh &#x2F;etc&#x2F;ssh-bak</p>
+</blockquote>
+<p>2、安装新版本：</p>
+<blockquote>
+<p>sudo dpkg -i openssh-<em>.deb<br>sudo dpkg -i ssh_</em>.deb<br>sudo dpkg -i openssh-*.udeb</p>
+</blockquote>
+<p>3、安装成功后执行如下命令查看版本。</p>
+<blockquote>
+<p>ssh -V</p>
+</blockquote>
+<p>4、检测ssh配置文件是否异常</p>
+<blockquote>
+<p>sshd -t</p>
+</blockquote>
+<p>若没任何提示,则表示正常,若有提示,请根据报错处理。</p>
+<blockquote>
+<p>chmod -v 600 &#x2F;etc&#x2F;ssh&#x2F;ssh_host_*_key</p>
+</blockquote>
+<p>若检测提示“UsePrivilegeSeparation”相关报错,则执行如下命令在检测。</p>
+<blockquote>
+<p>sudo sed -i ‘&#x2F;UsePrivilegeSeparation&#x2F;s&#x2F;^&#x2F;#&#x2F;‘ &#x2F;etc&#x2F;ssh&#x2F;sshd_config</p>
+</blockquote>
+<p>5、能正常检测到新版本后可以尝试重启ssh服务。</p>
+<blockquote>
+<p>service ssh restart</p>
+</blockquote>
+<p>重启后可以重新打开一个ssh终端看能否登录（当前登录的终端不要关闭）,如果新开一个终端能登录,则基本上没有问题了。若业务和服务器允许重启,可以重启下服务器看是否能正常登录。</p>
+<h3 id="升级前必看"><a href="#升级前必看" class="headerlink" title="升级前必看"></a>升级前必看</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">升级前必看：</span><br><span class="line"></span><br><span class="line">1、升级有风险,请务必先做好数据备份或者快照,以免更新有异常导致系统无法启动等问题,建议在测试环境通过后再到生产环境中部署。</span><br><span class="line">2、若有配置密钥登录,升级后密钥可能会失效,届时需要重新配置。</span><br><span class="line">3、不支持Ubuntu 16系统。在Ubuntu 18/20/22系统测试通过。</span><br><span class="line"></span><br><span class="line">下载：</span><br><span class="line">https://down.tag.gg/Openssh/deb/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">支持Debian 12系统,其他Debian没测试。</span><br><span class="line"></span><br><span class="line">不支持Ubuntu 16。在Ubuntu 180/20/22/24系统测试通过。OpenSSL版本是： OpenSSL 3.0.15</span><br><span class="line"></span><br><span class="line">重要：：：：升级有风险，升级前做好快照备份，以免系统异常无法启动。</span><br><span class="line"></span><br><span class="line">1、重要：备份原来ssh配置文件：</span><br><span class="line"></span><br><span class="line">cp -rp /etc/ssh /etc/ssh-bak</span><br><span class="line"></span><br><span class="line">2、安装新版本：安装后执行命令 ssh -V 查看新的版本。</span><br><span class="line"></span><br><span class="line">sudo dpkg -i openssh-*.deb</span><br><span class="line">sudo dpkg -i ssh_*.deb</span><br><span class="line">sudo dpkg -i openssh-*.udeb</span><br><span class="line"></span><br><span class="line">3、设置ssh配置文件权限：（此步骤一般可跳过，提示权限问题时在考虑执行）</span><br><span class="line"></span><br><span class="line">chmod -v 600 /etc/ssh/ssh_host_*_key</span><br><span class="line"></span><br><span class="line">4、检测ssh配置文件是否正确,执行命令后没任何显示则表示配置正常。如果有报错则需要先根据报错解决问题。</span><br><span class="line"></span><br><span class="line">sshd -t </span><br><span class="line"></span><br><span class="line">5、上面命令没任何提示则表示正确。执行如下命令重启ssh。</span><br><span class="line"></span><br><span class="line">service ssh restart</span><br><span class="line"></span><br><span class="line">6、查看已安装的版本</span><br><span class="line"></span><br><span class="line">ssh -v</span><br></pre></td></tr></table></figure>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源。若文章内容存在错误、过期信息或更优解法，欢迎在仓库中提出修正。 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2026 Owen
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.1" ></script>
+
+<script src="/js/script.js?v=1.1.1" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    <a class="dynamic-menu site_url"   href="/archives">归档</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/owen-chenao">GitHub</a>
+    
+</div>
+
+
+</html>
